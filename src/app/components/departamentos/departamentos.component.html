@@ -1,0 +1,31 @@
+<div>
+    <h1>Departamentos</h1>
+    <div class="spinner-border" role="status" *ngIf="!departamentos" >
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <table class="table table-bordered table-dark text-center"
+    *ngIf="departamentos">
+        <thead>
+            <tr>
+                <td>Numero</td>
+                <td>Nombre</td>
+                <td>Localidad</td>
+                <td>Empleados</td>
+                <td>Editar</td>
+                <td>Borrar</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let departamento of departamentos">
+                <td>{{departamento.numero}}</td>
+                <td>{{departamento.nombre}}</td>
+                <td>{{departamento.localidad}}</td>
+                <td><a class="btn btn-info" [routerLink]="['/empleados']">Empleados</a></td>
+                <!-- <td><a [routerLink]="['/edit/'+dept.numero+'/'+dept.nombre+'/'+dept.localidad]"></a></td> -->
+                <td><a class="btn btn-warning mx-auto" [routerLink]="['/edit',departamento.numero,departamento.nombre,departamento.localidad]">Editar</a></td>
+                <!-- <td><button class="btn btn-danger" (click)="deleteDepartamento(departamento.numero)">Borrar</button></td> -->
+                <td><button class="btn btn-danger" [routerLink]="['/delete',departamento.numero]">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+<div>
+    <h1>Empleados</h1>
+    <table class="table table-bordered table-dark text-center">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Apellido</td>
+                <td>Oficio</td>
+                <td>Salario</td>
+                <td>Departamento</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emple of empleados">
+                <td>{{emple.idEmpleado}}</td>
+                <td>{{emple.apellido}}</td>
+                <td>{{emple.oficio}}</td>
+                <td>{{emple.salario}}</td>
+                <td>{{emple.departamento}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
